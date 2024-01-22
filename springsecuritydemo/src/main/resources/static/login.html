@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<!--
+  拿到登录的form表单
+  sumbit提交按钮，调用/login方法
+
+  method=post/name=usename/password都是固定的
+-->
+<form action="/login" method="post">
+    <!-- 隐藏域 -->
+    <input type="hidden" th:value="${_csrf.token}" name="_csrf" th:if="${_csrf}"/>
+<!--    用户名:<input type="text" name="username123" />-->
+    用户名:<input type="text" name="username" />
+    密码: <input type="password" name="password" />
+    记住我：<input type="checkbox" name="remember-me" value="true" /><br/>
+    <input type="submit" value="登录" />
+</form>
+</body>
+</html>

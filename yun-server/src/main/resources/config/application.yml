@@ -1,0 +1,51 @@
+server:
+  port: 9090
+spring:
+  # 数据源配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/yun?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+      username: ProjectManager
+      password: test
+  redis:
+    timeout: 10000ms
+    host: 192.168.135.128
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-active: 1024
+        max-wait: 10000ms
+        max-idle: 200
+        min-idle: 5
+    password: test
+  rabbitmq:
+    host: 192.168.135.128
+    port: 5672
+    username: yeb
+    password: yeb
+    publisher-returns: true
+    publisher-confirm-type: correlated
+# MyBatis-plus 配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*mapper.xml
+  type-aliases-package: com.mpy.server.pojo
+  # 驼峰命名
+  configuration:
+    map-underscore-to-camel-case: false
+# 配置 mybatis sql 打印
+logging:
+  level:
+    com.mpy.mapper: debug
+
+jwt:
+#  JWT 存储的请求头
+  tokenHeader: Authorization
+#  JWT 加解密使用的密钥
+  secret: yeb-secret
+#  JWT 的超期限时间(60*60*24)
+  expiration: 604800
+#  JWT 负载中拿到开头
+  tokenHead: Bearer

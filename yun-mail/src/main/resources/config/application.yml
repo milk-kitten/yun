@@ -1,0 +1,53 @@
+server:
+  port: 9092
+spring:
+  # 邮箱配置
+  mail:
+    # 邮件服务器地址
+    host: smtp.qq.com
+    # 协议
+    protocol: smtp
+    #编码格式
+    default-encoding: utf-8
+    # 授权码
+    password: ajxnwwjgkudldjch
+    # 发送者邮箱地址
+    username: 2404789419@qq.com
+    # 端口
+#    port: 465
+    properties:
+      mail:
+        stmp:
+          auth: true #设置是否需要验证，如果为true，那么用户名和密码是必须的，如果是false，可以不设置用户名和密码，这也得看对接平台是否支持无密码登陆
+          starttls: #是对纯文本通信协议的扩展，它提供一种方式将纯文本连接升级为加密连接（TLS或SSL），而不是另外使用一个端口作加密通道
+            enable: true
+            required: true
+          ssl:
+            enable: true
+            required: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 465
+  # rabbitmq 配置
+  rabbitmq:
+    host: 192.168.135.128
+    port: 5672
+    username: yeb
+    password: yeb
+    listener:
+      simple:
+        # 手动确认
+        acknowledge-mode: manual
+  # redis 配置
+  redis:
+    timeout: 10000ms    #连接超时时间
+    host: 192.168.135.128
+    port: 6379
+    database: 1
+    password: test
+    lettuce:
+      pool:
+        max-active: 1024
+        max-wait: 10000ms
+        max-idle: 200
+        min-idle: 5

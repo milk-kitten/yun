@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="yun-server" />
+        <module name="yun-mail" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springsecuritydemo" target="1.8" />
+      <module name="yeb-generator" target="17" />
+      <module name="yun-generator" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springsecuritydemo" options="-parameters" />
+      <module name="yeb-generator" options="-parameters" />
+      <module name="yun-generator" options="-parameters" />
+      <module name="yun-mail" options="-parameters" />
+      <module name="yun-server" options="-parameters" />
+    </option>
+  </component>
+</project>
