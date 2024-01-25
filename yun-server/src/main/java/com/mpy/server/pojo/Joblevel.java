@@ -12,6 +12,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * <p>
@@ -50,4 +51,13 @@ public class Joblevel implements Serializable {
 
     @ApiModelProperty(value = "是否启用")
     private Boolean enabled;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Joblevel joblevel = (Joblevel) o;
+        return name.equals(joblevel.name);
+    }
+
 }

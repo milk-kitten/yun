@@ -10,6 +10,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * <p>
@@ -38,5 +39,13 @@ public class PoliticsStatus implements Serializable {
     @Excel(name = "政治面貌")
     @NonNull
     private String name;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PoliticsStatus that = (PoliticsStatus) o;
+        return name.equals(that.name);
+    }
 
 }

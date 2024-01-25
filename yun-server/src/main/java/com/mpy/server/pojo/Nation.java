@@ -10,6 +10,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * <p>
@@ -42,5 +43,12 @@ public class Nation implements Serializable {
     @NonNull
     private String name;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Nation nation = (Nation) o;
+        return name.equals(nation.name);
+    }
 
 }

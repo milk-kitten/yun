@@ -12,6 +12,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * <p>
@@ -47,5 +48,13 @@ public class Position implements Serializable {
 
     @ApiModelProperty(value = "是否启用")
     private Boolean enabled;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Position position = (Position) o;
+        return name.equals(position.name);
+    }
 
 }
