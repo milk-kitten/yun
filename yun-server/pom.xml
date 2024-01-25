@@ -107,9 +107,9 @@
         </dependency>
         <!-- FastDFS依赖-->
         <dependency>
-            <groupId>org.csource</groupId>
+            <groupId>com.taoyuanx</groupId>
             <artifactId>fastdfs-client-java</artifactId>
-            <version>1.29-SNAPSHOT</version>
+            <version>1.29-RELEASE</version>
         </dependency>
 
         <dependency>

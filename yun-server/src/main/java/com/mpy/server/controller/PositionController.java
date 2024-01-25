@@ -21,7 +21,7 @@ import java.util.List;
  * @since 2023-12-11
  */
 @RestController
-@RequestMapping("/system/cfg/pos")
+@RequestMapping("/system/basic/pos")
 public class PositionController {
 
     //自动注入service

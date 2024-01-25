@@ -24,7 +24,6 @@ public class FastDFSUtils {
     static {
         try {
             String filePath = new ClassPathResource("fdfs_client.conf").getFile().getAbsolutePath();
-            System.out.println(filePath);
             ClientGlobal.init(filePath);
         } catch (Exception e) {
             logger.error("FastDFS Client Init Fail!", e);

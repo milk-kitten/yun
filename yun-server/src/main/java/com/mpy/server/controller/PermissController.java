@@ -1,7 +1,9 @@
 package com.mpy.server.controller;
 
+import com.mpy.server.pojo.Menu;
 import com.mpy.server.pojo.RespBean;
 import com.mpy.server.pojo.Role;
+import com.mpy.server.service.IMenuService;
 import com.mpy.server.service.IRoleService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/system/basic/permiss")
+@RequestMapping("/system/basic/permission")
 public class PermissController {
     @Autowired
     private IRoleService iRoleService;
+
+    @Autowired
+    private IMenuService iMenuService;
 
     /**
      * 获取所有角色
@@ -45,5 +50,11 @@ public class PermissController {
             return RespBean.success("删除成功");
         }
         return RespBean.error("删除失败");
+    }
+
+    @ApiOperation(value = "查询所有的菜单")
+    @GetMapping("/menus")
+    public List<Menu> getAllMenus() {
+        return iMenuService.getAllMenus();
     }
 }

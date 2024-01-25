@@ -63,7 +63,7 @@ public class AdminController {
     }
 
     @ApiOperation(value = "更新操作员角色")
-    @PutMapping("/roles")
+    @PutMapping("/role")
     public RespBean updateAdminRole(Integer adminId, Integer[] rids) {
         return iAdminService.updateAdminRole(adminId,rids);
     }
