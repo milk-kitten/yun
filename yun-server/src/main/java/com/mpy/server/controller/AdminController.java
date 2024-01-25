@@ -33,7 +33,10 @@ public class AdminController {
     @ApiOperation(value = "获取所有操作员")
     @GetMapping("/")
     public List<Admin> getAllAdmins(String keywords) {
-        return iAdminService.getAllAdmins(keywords);
+        List<Admin> allAdmins = iAdminService.getAllAdmins(keywords);
+        System.out.println(allAdmins);
+        return allAdmins;
+//        return iAdminService.getAllAdmins(keywords);
     }
 
     @ApiOperation(value = "更新操作员")

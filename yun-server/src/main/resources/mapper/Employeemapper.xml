@@ -147,7 +147,7 @@
             e.`name` like concat('%',#{employee.name},'%')
         </if>
 
-        <if test="null != employee.nationId">
+        <if test="null != employee.politicId">
             and
             e.politicId = #{employee.politicId}
         </if>

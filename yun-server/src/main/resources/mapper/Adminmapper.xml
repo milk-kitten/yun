@@ -12,7 +12,7 @@
         <result column="enabled" property="enabled" />
         <result column="username" property="username" />
         <result column="password" property="password" />
-        <result column="user_face" property="userFace" />
+        <result column="userFace" property="userFace" />
         <result column="remark" property="remark" />
     </resultMap>
 
@@ -34,7 +34,7 @@
         select
             a.id, a.`name`, a.phone,
             a.telephone, a.address, a.enabled,
-            a.username, a.userface, a.remark,
+            a.username, a.userFace, a.remark,
             r.id as rid, r.`name` as rname,
             r.nameZh as rnameZh
         from
